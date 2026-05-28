@@ -1,0 +1,88 @@
+.cover-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #2c003e, #0f0014, #000000); /* Latar belakang gelap estetik */
+    overflow: hidden;
+    position: relative;
+}
+
+.kotak-kado {
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+#ikon-kado {
+    font-size: 120px; /* Ukuran kado dibuat besar mencolok */
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+/* Animasi teks petunjuk di bawah kado biar berkedip lembut */
+.petunjuk-klik {
+    font-family: 'Poppins', sans-serif;
+    color: #ffb3d9;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    animation: kedipLembut 1.5s infinite alternate;
+}
+
+@keyframes kedipLembut {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* --- ANIMASI KADO BERGOYANG (WIGGLE) --- */
+.kado-goyang {
+    /* Bergetar selama 0.6 detik */
+    animation: goyangKado 0.6s ease-in-out; 
+}
+
+@keyframes goyangKado {
+    0% { transform: scale(1) rotate(0deg); }
+    15% { transform: scale(1.2) rotate(-15deg); }
+    30% { transform: scale(1.2) rotate(15deg); }
+    45% { transform: scale(1.2) rotate(-10deg); }
+    60% { transform: scale(1.2) rotate(10deg); }
+    85% { transform: scale(1.1) rotate(-5deg); }
+    100% { transform: scale(1.1) rotate(0deg); }
+}
+
+/* --- EMOJI YANG MELEDAK (VERSI LEBIH PELAN & MELAYANG) --- */
+.emoji-ledakan {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10;
+    
+    /* UBAHAN KUNCI: 
+       - Durasi dinaikkan dari 1.4s menjadi 2.5s (biar melayang lama)
+       - Menggunakan 'ease-out' agar di awal memantul normal, lalu melambat sangat halus di udara */
+    animation: hamburMuntah 2.5s ease-out forwards;
+}
+
+@keyframes hamburMuntah {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    10% {
+        /* Emoji langsung muncul di awal ledakan */
+        opacity: 1;
+    }
+    30% {
+        /* Efek melambat mulai terasa di sini */
+        opacity: 1;
+    }
+    100% {
+        /* Semburan bergerak pelan ke koordinat tujuan sambil berputar santai */
+        transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.2) rotate(260deg);
+        opacity: 0; /* Menghilang perlahan di akhir */
+    }
+}
