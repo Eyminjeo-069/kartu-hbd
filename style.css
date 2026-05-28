@@ -157,7 +157,7 @@ body {
     font-family: "relodrame";
     font-size: 4rem;
     font-weight: 500;
-    margin-top: -30px;
+    margin-top: -20px;
     margin-bottom: 100px;
     color: #e01392;
     text-shadow: 0 0 30px #ffffff;
@@ -225,7 +225,7 @@ opacity: 0;
     margin-top: -25px;
     margin-bottom: 20px;
     color: #000000;
-    justify-self: right;
+    justify-self: right !important;
 }
 .halamanY h3 {
     font-family: 'eternalo';
@@ -427,7 +427,7 @@ opacity: 0;
     font-family: "relodrame";
     font-size: 3rem;
     font-weight: 500;
-    margin-top: -40px;
+    margin-top: -20px;
     margin-bottom: 100px;
     color: #e01392;
     text-shadow: 0 0 30px #ffffff;
@@ -438,8 +438,8 @@ opacity: 0;
     font-weight: 400;
     margin-top: -80px;
     margin-bottom: 1px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin-left: 0px;
+    margin-right: 0px;
     color:#000000;
 }
 .halamanZ h6 {
