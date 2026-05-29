@@ -1,7 +1,7 @@
-/* Mendeklarasikan font kustom kamu */
+
 @font-face {
-    font-family: 'roable'; /* Ini nama bebas yang kamu buat sendiri */
-    src: url('fonts/roable.otf') format('opentype'); /* Arahkan ke tempat file font kamu disimpan */
+    font-family: 'roable'; 
+    src: url('fonts/roable.otf') format('opentype');
 }
 @font-face {
     font-family: 'eternalo'; 
@@ -17,20 +17,19 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* 1. Reset dasar agar jarak di browser rapi */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 2. Mengatur Background Utama (Gradasi Ungu Tua ke Hitam) */
 body {
     margin: 0;
     padding: 0;
     width: 100%;
     
-    /* background-image: url('bg1.png'); */
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,70 +37,63 @@ body {
     background-attachment: fixed;
 }
 
-/* 3. Mengatur Wadah Utama Scroll */
 .scroll-container {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-/* 4. Mengatur Tiap Halaman Seksional */
 .halaman {
-    /* Membuat tiap halaman memiliki tinggi minimal setara 1 layar penuh browser */
+    
     min-height: 70vh; 
     
-    /* Membuat konten di dalamnya otomatis berada di tengah-tengah */
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    /* Jarak aman di kanan-kiri dan atas-bawah */
+    
     padding: 40px 20px; 
     text-align: center;
     
 }
 .halamanY {
-    /* Membuat tiap halaman memiliki tinggi minimal setara 1 layar penuh browser */
+
     min-height: 100vh; 
     
-    /* Membuat konten di dalamnya otomatis berada di tengah-tengah */
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    /* Jarak aman di kanan-kiri dan atas-bawah */
     padding: 40px 20px; 
     text-align: center;
      
 }
 .halamanX {
-    /* Membuat tiap halaman memiliki tinggi minimal setara 1 layar penuh browser */
+    
     min-height: 100vh; 
     
-    /* Membuat konten di dalamnya otomatis berada di tengah-tengah */
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    /* Jarak aman di kanan-kiri dan atas-bawah */
     padding: 40px 20px; 
     text-align: center;
     
 }
 .halamanZ {
-    /* Membuat tiap halaman memiliki tinggi minimal setara 1 layar penuh browser */
     min-height: 100vh; 
     
-    /* Membuat konten di dalamnya otomatis berada di tengah-tengah */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    /* Jarak aman di kanan-kiri dan atas-bawah */
     padding: 40px 20px; 
     text-align: center;
     
@@ -115,17 +107,15 @@ body {
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#000000", GradientType=1 );
     }
 .ending {
-    /* Membuat tiap halaman memiliki tinggi minimal setara 1 layar penuh browser */
+
     min-height: 10vh;
     background-color: #000000;
     
-    /* Membuat konten di dalamnya otomatis berada di tengah-tengah */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     
-    /* Jarak aman di kanan-kiri dan atas-bawah */
     padding: 40px 20px; 
     text-align: center;
     
@@ -259,75 +249,66 @@ opacity: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Agar teks di bawahnya tetap bisa di-klik */
-    z-index: 9999; /* Agar posisi kelopak selalu di depan background */
+    pointer-events: none; 
+    z-index: 9999;
     overflow: hidden;
 }
-
-/* Gaya untuk setiap kelopak bunga */
 .kelopak {
     position: absolute;
-    top: -40px; /* Mulai dari sedikit di atas layar */
-    color: #ffb3d9; /* Warna pink kelopak */
+    top: -40px;
+    color: #ffb3d9;
     font-size: 1.5rem;
     user-select: none;
     animation: jatuh linear infinite;
 }
 
-/* Logika gerakan jatuh dan bergoyang */
+
 @keyframes jatuh {
     0% {
         transform: translateY(0) rotate(0deg) translateX(0);
         opacity: 1;
     }
     50% {
-        /* Di tengah jalan, kelopaknya agak miring/bergeser ke samping */
+        
         transform: translateY(50vh) rotate(180deg) translateX(30px);
         opacity: 0.8;
     }
     100% {
-        /* Jatuh sampai melewati bawah layar */
+        
         transform: translateY(105vh) rotate(360deg) translateX(-20px);
         opacity: 0;
     }
 }
-/* --- STYLE BOX KONTEN TRANSPARAN GRADIENT --- */
+
 .box-konten {
-    /* 1. Membuat warna background transparan bergradasi (putih transparan ke pink soft transparan) */
+    
     background: linear-gradient(
         135deg, 
         rgba(255, 255, 255, 0.07), 
         rgba(255, 179, 217, 0.03)
     );
     
-    /* 2. Efek Kaca Buram (Glassmorphism) agar terlihat mewah */
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Dukungan untuk browser Safari */
+    -webkit-backdrop-filter: blur(10px);
     
-    /* 3. Mengatur ukuran dan jarak di dalam box */
     padding: 40px;
     max-width: 650px;
-    width: 85%; /* Responsif di layar HP */
-    border-radius: 20px; /* Membuat sudut box melengkung lembut */
+    width: 85%;
+    border-radius: 20px;
     
-    /* 4. Memberikan garis tepi tipis semi-transparan agar box terlihat tegas */
     border: 1px solid rgba(255, 255, 255, 0.15);
     
-    /* 5. Efek bayangan halus di belakang box */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     
-    /* 6. Animasi halus jika nanti ingin ditambah efek muncul */
     transition: all 0.3s ease;
     margin-top: 10px;
 }
 .emoji-putar {
-    display: inline-block; /* WAJIB: Agar emoji bisa merespon efek putaran/transform */
+    display: inline-block;
     
-    /* Nama animasi: putar | Durasi: 4 detik | Gerakan: linear (kecepatan konstan) */
     animation: putar 4s linear infinite; 
 }
 
-/* LOGIKA PUTARAN (0 derajat sampai 360 derajat) */
 @keyframes putar {
     0% {
         transform: rotate(0deg);
@@ -337,42 +318,37 @@ opacity: 0;
     }
 }
 .kentul {
-    display: inline-block; /* WAJIB: Agar emoji bisa merespon efek putaran/transform */
+    display: inline-block; 
 
-    
-    /* Kita ubah nama animasinya jadi 'putarMentul' */
-    /* Durasi 3 detik agar gerakan mentul dan putarnya mengalun gemas */
     animation: putarMentul 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
 }
 @keyframes putarMentul {
     0% {
-        transform: translateY(0); /* Posisi normal di bawah */
+        transform: translateY(0); 
     }
     100% {
-        transform: translateY(-20px); /* Melompat ke atas sejauh 20px */
+        transform: translateY(-20px);
     }
 }
-/* --- KOTAK TRANSPARAN BESAR UNTUK SATU GAMBAR KLIPING --- */
 .box-kliping-foto {
-    width: 90%;                     /* Lebar kotak 90% dari layar HP agar ada jarak di kanan-kiri */
-    max-width: 500px;               /* Batas lebar maksimal di laptop agar tidak terlalu raksasa */
-    background: rgba(255, 255, 255, 0.15); /* Efek transparan putih tipis ala kaca */
+    width: 90%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.15); 
     backdrop-filter: blur(8px);     
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.25); 
-    border-radius: 20px;            /* Sudut kotak melengkung cantik */
-    padding: 15px;                  /* Jarak bingkai transparan ke gambar di dalamnya */
+    border-radius: 20px;
+    padding: 15px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2); 
     box-sizing: border-box;
-    margin: 20px auto;              /* Biar posisinya pas di tengah-tengah secara vertikal & horizontal */
+    margin: 20px auto;              
 }
 
-/* --- MENGATUR GAMBAR EDITAN DI DALAMNYA BIAR AUTO-RESPONSIVE --- */
 .box-kliping-foto img {
-    width: 100%;                    /* Lebar gambar otomatis melebar pas sesuai kotak transparannya */
-    height: auto;                   /* KUNCI: Tinggi gambar otomatis mengikuti proporsi asli hasil editanmu */
+    width: 100%;                    
+    height: auto;                   
     display: block;
-    border-radius: 12px;            /* Sudut gambar ikut melengkung rapi */
+    border-radius: 12px;            
 }
 .halamanX hm {
     font-family: 'Poppins';
@@ -471,30 +447,27 @@ opacity: 0;
 }
 .container-foto-bulat {
     display: flex;
-    justify-content: center; /* Meratakan secara horizontal ke tengah */
+    justify-content: center; 
     align-items: center;
     width: 100%;
-    margin-top: 50px;        /* Jarak ke konten di atasnya */
-    margin-bottom: 20px;     /* Jarak ke dasar halaman */
+    margin-top: 50px;        
+    margin-bottom: 20px;     
 }
 
-/* KUNCI: Membuat foto menjadi bulat sempurna */
+
 .foto-profil-bulat {
-    width: 150px;           /* Ukuran diameter bulatnya (Laptop) */
-    height: 150px;          /* Wajib sama dengan lebarnya agar bulat sempurna */
-    object-fit: cover;      /* Potong gambar secara cerdas agar tidak gepeng */
+    width: 150px;          
+    height: 150px;          
+    object-fit: cover;
     
-    /* INI JURUS UTAMANYA: Setengah dari diameter */
     border-radius: 50%;     
 
     /* 
     border: 4px solid #ffffff;*/
     
-    /* Opsional: Tambahkan bayangan lembut biar "timbul" */
     box-shadow: 1px 2px 40px rgba(255, 255, 255, 0.5);
 }
 
-/* Responsif: Perkecil sedikit ukuran di layar HP */
 @media (max-width: 480px) {
     .foto-profil-bulat {
         width: 120px;
