@@ -19,12 +19,10 @@
 }
 
 #ikon-kado {
-    font-size: 120px; /* Ukuran kado dibuat besar mencolok */
+    font-size: 120px;
     display: inline-block;
     transition: transform 0.3s ease;
 }
-
-/* Animasi teks petunjuk di bawah kado biar berkedip lembut */
 .petunjuk-klik {
     font-family: 'Poppins', sans-serif;
     color: #ffb3d9;
@@ -37,8 +35,6 @@
     0% { opacity: 0.3; }
     100% { opacity: 1; }
 }
-
-/* --- ANIMASI KADO BERGOYANG (WIGGLE) --- */
 .kado-goyang {
     /* Bergetar selama 0.6 detik */
     animation: goyangKado 0.6s ease-in-out; 
@@ -53,8 +49,6 @@
     85% { transform: scale(1.1) rotate(-5deg); }
     100% { transform: scale(1.1) rotate(0deg); }
 }
-
-/* --- EMOJI YANG MELEDAK (VERSI LEBIH PELAN & MELAYANG) --- */
 .emoji-ledakan {
     position: absolute;
     left: 50%;
@@ -63,9 +57,6 @@
     pointer-events: none;
     z-index: 10;
     
-    /* UBAHAN KUNCI: 
-       - Durasi dinaikkan dari 1.4s menjadi 2.5s (biar melayang lama)
-       - Menggunakan 'ease-out' agar di awal memantul normal, lalu melambat sangat halus di udara */
     animation: hamburMuntah 2.5s ease-out forwards;
 }
 
@@ -75,16 +66,16 @@
         opacity: 0;
     }
     10% {
-        /* Emoji langsung muncul di awal ledakan */
+        
         opacity: 1;
     }
     30% {
-        /* Efek melambat mulai terasa di sini */
+        
         opacity: 1;
     }
     100% {
-        /* Semburan bergerak pelan ke koordinat tujuan sambil berputar santai */
+        
         transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1.2) rotate(260deg);
-        opacity: 0; /* Menghilang perlahan di akhir */
+        opacity: 0;
     }
 }
